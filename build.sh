@@ -30,6 +30,7 @@ KLEAF_ARGS=("${DEBUG_ARGS} ${SANDBOX_ARGS} \
 set -x
 (
   export ${BAZEL_EXPORT_ENV} && \
+	tools/bazel ${KLEAF_OUT} clean && \
 	tools/bazel ${KLEAF_OUT} build ${KLEAF_ARGS} ${KLEAF_BUILD_TARGET}
   export ${BAZEL_EXPORT_ENV} && \
 	tools/bazel ${KLEAF_OUT} run ${KLEAF_ARGS} \
